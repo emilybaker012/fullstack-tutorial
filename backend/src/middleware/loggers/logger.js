@@ -1,8 +1,8 @@
-import {format} from 'date-fns';
-import {v4 as uuid} from 'uuid';
-import {existsSync} from 'fs';
+import { format } from 'date-fns';
+import { v4 as uuid } from 'uuid';
+import { existsSync } from 'fs';
 import { appendFile, mkdir } from 'fs';
-import {dirname, join} from 'path'
+import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -18,14 +18,13 @@ export const logEvents = async (message, logFileName) => {
 
   try {
     if (!existsSync(logPath)) {
-      mkdir(logPath, (err) =>{
+      mkdir(logPath, (err) => {
         if (err) {
           console.error('Error creating directory:', err);
         } else {
           console.log('Directory created successfully');
         }
-      }
-      );
+      });
     }
 
     appendFile(join(logPath, logFileName), logItem, (err) => {

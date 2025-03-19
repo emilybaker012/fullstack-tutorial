@@ -1,9 +1,8 @@
 import { useEffect } from 'react';
-import axiosClient from '../client/axiosInstance';
+import axiosClient from '@common/client/axiosInstance';
 
 const useAxios = () => {
-  useEffect(() => {
-  }, []);
+  useEffect(() => {}, []);
 
   return axiosClient;
 };

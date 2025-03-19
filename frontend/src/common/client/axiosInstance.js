@@ -4,7 +4,8 @@ import axios from 'axios';
 const axiosClient = axios.create();
 
 // Set base url
-axiosClient.defaults.baseURL = process.env.BASE_URL || 'http://localhost:3500/api/v1';
+axiosClient.defaults.baseURL =
+  process.env.BASE_URL || 'http://localhost:3500/api/v1';
 // Set default headers
 axiosClient.defaults.headers = {
   'Content-Type': 'application/json',
